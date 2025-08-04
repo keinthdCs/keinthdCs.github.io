@@ -9,197 +9,36 @@
     - Id: #id1
     - Class: .class1
 */
+/*
+  font-family: "Outfit", serif;
+*/
 
-body,
-html {
+* {
+  text-decoration: none;
+}
+
+body,html {
   margin: 0px;
   padding: 0px;
   display: block;
   scroll-behavior: smooth;
 }
 
-a {
-  letter-spacing: 2px;
-}
-
-.header {
-  top: 0;
-  left: 0;
-  width: 100%;
-  margin-top: 60px;
+/* Header */
+.navbar {
   display: flex;
-  font-family: "Outfit", serif;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.page1 {
-  margin: 50px;
-  margin-top: 20px;
-  height: 700px;
+.navbar-left {
+  font-size: 24px;
 }
 
-.navbar a {
-  position: relative;
-  font-size: 18px;
-  color: black;
-  text-decoration: none;
-  margin-right: 124px;
-}
-
-.navbar2 a {
-  margin-right: 50px;
-  position: relative;
-  font-size: 18px;
-  color: black;
-  text-decoration: none;
-}
-
-.header a::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: black;
-  transition: .3s;
-}
-
-.header a:hover::before {
-  width: 100%;
-}
-
-.name {
-  margin-top: 0px;
-  padding: 30px;
-  z-index: 1000;
-  width: 958px;
-}
-
-h1 {
-  font-family: "Antonio", serif;
-  font-size: 200px;
-  font-weight: bolder;
-  letter-spacing: 13px;
-  margin: 0px;
-  padding: 0px;
-}
-
-.descript {
-  margin-top: 57px;
-  padding-left: 11px;
-  font-family: "Roboto", serif;
-  letter-spacing: 2px;
-  width: 400px;
-}
-
-.aguado {
-  width: 600px;
-}
-
-.keinth {
-  width: 490px;
-}
-
-.downName {
-  margin-top: 65px;
-  display: inline-flex;
-}
-
-.content1 {
-  display: inline-flex;
-}
-
-.photo {
-  z-index: 0;
-  margin-top: 89px;
-}
-
-.page2 {
-  height: 1024px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  background: #1E1E1E;
-  padding-left: 95px;
-}
-
-.info1 {
-  font-family: 'Outfit', serif;
-  font-size: 21.6px;
-  color: #888888;
-  margin-top: 48px;
-}
-
-.title1 {
-  font-family: 'Outfit', serif;
-  font-size: 44.79px;
-  color: white;
-  font-weight: 500;
-  letter-spacing: 4px;
-  width: 821px;
-  margin-top: 15px;
-}
-
-.content2 {
-  display: flex;
-  margin-top: 0px;
-}
-
-.image-container {
-  width: 294px;
-  height: 294px;
-  overflow: hidden;
-}
-
-.photo2 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.AboutMe {
-  font-family: "Roboto", serif;
-  letter-spacing: 2px;
-  color: white;
-  width: 869px;
-  margin-left: 60px;
-  margin-top: 0px;
-}
-
-.AboutMe2 {
-  font-family: "Roboto", serif;
-  letter-spacing: 2px;
-  color: white;
-  width: 869px;
-  margin-left: 60px;
-  margin-top: 30px;
-}
-
-.lang {
-  margin-top: 20px;
-}
-
-.languages {
-  font-family: 'Outfit', serif;
-  font-size: 21.6px;
-  font-weight: 500;
-  color: white;
-}
-
-.lang-img {
-  height: 110px;
-  width: 1263px;
-  background: #F5F5F5;
-  background-color: rgba(245, 245, 245, 0.3);
-  border-radius: 20px;
-  opacity: 0.4;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 100;
-  gap: 10px;
+.navbar-right li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 25px;
 }
