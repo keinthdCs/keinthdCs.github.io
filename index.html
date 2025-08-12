@@ -9,7 +9,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 		<link rel="icon" href="/vite.svg" type="image/svg+xml" />
-		<link rel="preload" as="image" href="/eyes.jpg" imagesizes="(max-width: 600px) 88vw, (max-width: 1000px) 80vw, 520px" />
+		<link rel="preload" as="image" href="images/eyes.jpg" imagesizes="(max-width: 600px) 88vw, (max-width: 1000px) 80vw, 520px" />
 		<link rel="stylesheet" href="/src/style.css" />
 			<noscript>
 				<style>
@@ -22,11 +22,12 @@
 
 		<header class="site-header" role="banner">
 			<div class="container head">
-				<div class="brand">
+			<div class="brand">
 					<span class="dot" aria-hidden="true"></span>
 					<a href="#hero" class="brand-name" aria-label="Inicio">Keinth.dev</a>
 				</div>
-				<nav class="site-nav" aria-label="Principal">
+			<button class="menu-toggle" aria-label="Abrir menú" aria-controls="site-nav" aria-expanded="false">☰</button>
+			<nav id="site-nav" class="site-nav" aria-label="Principal">
 					<ul>
 						<li><a href="#about">Acerca</a></li>
 						<li><a href="#skills">Habilidades</a></li>
@@ -64,9 +65,9 @@
 							<a href="#contact" class="btn">Contacto</a>
 						</div>
 					</div>
-																	<figure class="hero__visual">
+																	  <figure class="hero__visual">
 																		<img 
-																			src="/eyes.jpg"
+																		  src="images/eyes.jpg"
 																			alt="Ilustración abstracta"
 																			loading="eager"
 																			fetchpriority="high"

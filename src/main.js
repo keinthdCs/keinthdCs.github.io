@@ -45,6 +45,21 @@ dots.forEach((btn) => {
 	});
 });
 
+// Mobile menu toggle
+const menuBtn = document.querySelector('.menu-toggle');
+const nav = document.getElementById('site-nav');
+if (menuBtn && nav) {
+	const toggle = () => {
+		const open = nav.classList.toggle('open');
+		menuBtn.setAttribute('aria-expanded', String(open));
+	};
+	menuBtn.addEventListener('click', toggle);
+	nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+		nav.classList.remove('open');
+		menuBtn.setAttribute('aria-expanded', 'false');
+	}));
+}
+
 // Project horizontal scroller controls
 const scroller = document.querySelector('.h-scroll');
 const prevBtn = document.querySelector('.h-scroll__controls .prev');
