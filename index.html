@@ -1,35 +1,260 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
+		<title>Portafolio | Desarrollador</title>
+		<meta name="description" content="Portafolio de desarrollador: proyectos, habilidades y enfoque técnico con una narrativa visual secuencial." />
+    
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+	</head>
+	<body>
+		<!-- Scroll progress bar -->
+		<div class="progress" aria-hidden="true"><span class="bar" id="scrollProgress"></span></div>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <link rel="stylesheet" href="src/style.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keinth Aguado</title>
+		<!-- Header / Navbar -->
+		<header class="site-header" role="banner">
+			<a class="brand" href="#hero" aria-label="Ir al inicio">
+				<svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+					<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+					<path d="M6 12h12" stroke="currentColor" stroke-width="2"/>
+				</svg>
+				<span class="brand__text">Dev Portfolio</span>
+			</a>
+			<nav class="nav" aria-label="Principal">
+				<button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">Menú</button>
+				<ul class="nav__menu" id="navMenu">
+					<li><a href="#hero">Inicio</a></li>
+					<li><a href="#about">Perfil</a></li>
+					<li><a href="#skills">Habilidades</a></li>
+					<li><a href="#projects">Proyectos</a></li>
+					<li><a href="#process">Proceso</a></li>
+					<li><a href="#contact">Contacto</a></li>
+				</ul>
+			</nav>
+			<button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+				<span class="sun" aria-hidden="true">☀️</span>
+				<span class="moon" aria-hidden="true">🌙</span>
+			</button>
+		</header>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-</head>
+		<!-- Narrative sections (vertical scroll + scroll-snap) -->
+		<main id="app" class="snap">
+			<!-- HERO -->
+			<section id="hero" class="panel panel--hero reveal" aria-label="Introducción">
+				<div class="hero__media" role="img" aria-label="Imagen de portada" style="--hero:url('/eyes.jpg')"></div>
+				<div class="container">
+					<h1 class="title">Construyo experiencias web claras, rápidas y útiles.</h1>
+					<p class="subtitle">Frontend Engineer · JavaScript · CSS · Accesibilidad · Rendimiento</p>
+					<div class="hero__cta">
+						<a class="btn btn--primary" href="#projects">Ver proyectos</a>
+						<a class="btn" href="#contact">Contactar</a>
+					</div>
+				</div>
+			</section>
 
-<body>
-  <div class="page1" id="home_page">
-    <!--Navigation Bar: (keinth -- Home, About, Projects, Contact)-->
-    <header class="header">
-      <nav class="navbar">
-        <div class="navbar-left"><p>keinth</p></div>
-        <ul class="navbar-right">
-          <li><a href="#">Home</a></li>
-          <li><a href="#about_page">About</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      
-    </header>
-  </div>
-</body>
-</html>
+			<!-- ABOUT -->
+			<section id="about" class="panel reveal" aria-label="Perfil profesional">
+				<div class="container grid cols-2">
+					<div>
+						<h2>Perfil</h2>
+						<p>
+							Desarrollador con enfoque en interfaces accesibles, escalables y de alto rendimiento. Combino
+							un diseño minimalista con técnicas modernas para crear productos limpios y mantenibles.
+						</p>
+						<ul class="bullets">
+							<li>Arquitecturas modulares con patrones modernos.</li>
+							<li>Experiencia en SSR/SPA, optimización de Core Web Vitals.</li>
+							<li>Integración CI/CD y buenas prácticas de testing.</li>
+						</ul>
+					</div>
+					<aside class="card">
+						<h3>Enfoque</h3>
+						<p><strong>Usabilidad primero</strong>, animaciones sutiles que potencian la narrativa sin distraer.</p>
+						<p><strong>Código claro</strong>, componentes aislados y documentación breve pero efectiva.</p>
+						<p><strong>Performance</strong>, lazy-loading, CSS moderno y JavaScript ligero.</p>
+					</aside>
+				</div>
+			</section>
+
+			<!-- SKILLS -->
+			<section id="skills" class="panel reveal" aria-label="Habilidades técnicas">
+				<div class="container">
+					<h2>Habilidades</h2>
+					<div class="chips">
+						<span class="chip">HTML5</span>
+						<span class="chip">CSS3 · Flexbox · Grid</span>
+						<span class="chip">JavaScript (ES2023)</span>
+						<span class="chip">Accesibilidad (WCAG)</span>
+						<span class="chip">Rendimiento Web</span>
+						<span class="chip">Vite</span>
+						<span class="chip">Sass</span>
+						<span class="chip">Testing</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- PROJECTS (horizontal scroll-snap carousel) -->
+			<section id="projects" class="panel panel--alt reveal" aria-label="Proyectos destacados">
+				<div class="container">
+					<div class="section-head">
+						<h2>Proyectos</h2>
+						<p>Casos de estudio con detalles técnicos, retos y soluciones.</p>
+					</div>
+
+					<div class="carousel" id="projectCarousel" tabindex="0" aria-label="Carrusel de proyectos" aria-roledescription="carousel">
+						<article class="card project" aria-roledescription="slide">
+							<header class="project__header">
+								<h3>Dashboard de Analítica</h3>
+								<span class="tag">SPA</span>
+							</header>
+							<p>Arquitectura modular con enrutado y gráficos dinámicos. Lazy-loading de módulos y memoización para mantener 60fps.</p>
+							<ul class="meta">
+								<li>Stack: JS, Vite, CSS Grid</li>
+								<li>Reto: Rendering pesado</li>
+								<li>Solución: Virtualización y debounced observers</li>
+							</ul>
+							<footer class="project__footer">
+								<a class="btn btn--ghost" href="#" aria-disabled="true">Demo</a>
+								<button class="btn btn--primary" data-modal-target="#modal-1">Leer más</button>
+							</footer>
+						</article>
+
+						<article class="card project" aria-roledescription="slide">
+							<header class="project__header">
+								<h3>E-commerce Minimal</h3>
+								<span class="tag">SSR</span>
+							</header>
+							<p>Checkout optimizado, imágenes adaptativas y prefetch de rutas críticas. Mejora de LCP/CLS.</p>
+							<ul class="meta">
+								<li>Stack: HTML, CSS, JS</li>
+								<li>Reto: Core Web Vitals</li>
+								<li>Solución: Imagen responsive + font-display</li>
+							</ul>
+							<footer class="project__footer">
+								<a class="btn btn--ghost" href="#" aria-disabled="true">Repo</a>
+								<button class="btn btn--primary" data-modal-target="#modal-2">Leer más</button>
+							</footer>
+						</article>
+
+						<article class="card project" aria-roledescription="slide">
+							<header class="project__header">
+								<h3>Design System</h3>
+								<span class="tag">UI</span>
+							</header>
+							<p>Tokens, componentes y documentación con ejemplos accesibles y dark mode.</p>
+							<ul class="meta">
+								<li>Stack: CSS, JS</li>
+								<li>Reto: Consistencia</li>
+								<li>Solución: Variables + utilidades</li>
+							</ul>
+							<footer class="project__footer">
+								<a class="btn btn--ghost" href="#" aria-disabled="true">Docs</a>
+								<button class="btn btn--primary" data-modal-target="#modal-3">Leer más</button>
+							</footer>
+						</article>
+					</div>
+
+					<div class="carousel__controls">
+						<button class="btn" id="prevProject" aria-label="Anterior">←</button>
+						<button class="btn" id="nextProject" aria-label="Siguiente">→</button>
+					</div>
+				</div>
+			</section>
+
+			<!-- PROCESS -->
+			<section id="process" class="panel reveal" aria-label="Proceso de trabajo">
+				<div class="container grid cols-3">
+					<div class="step">
+						<span class="step__n">01</span>
+						<h3>Explorar</h3>
+						<p>Definimos objetivos, usuarios y métricas. Auditamos accesibilidad y rendimiento.</p>
+					</div>
+					<div class="step">
+						<span class="step__n">02</span>
+						<h3>Diseñar</h3>
+						<p>Wireframes, prototipos y narrativa visual. Animaciones que guían la atención.</p>
+					</div>
+					<div class="step">
+						<span class="step__n">03</span>
+						<h3>Construir</h3>
+						<p>Código modular, tests y CI. Deploy con monitoreo de Web Vitals.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- CONTACT -->
+			<section id="contact" class="panel panel--alt reveal" aria-label="Contacto">
+				<div class="container">
+					<h2>Hablemos</h2>
+					<p>¿Tienes una idea o proyecto? Me encantaría colaborar.</p>
+					<form class="form" name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field">
+						<input type="hidden" name="form-name" value="contact" />
+						<p class="hidden">
+							<label>No completar: <input name="bot-field" /></label>
+						</p>
+						<div class="grid cols-2 form__grid">
+							<label>
+								<span>Nombre</span>
+								<input name="name" autocomplete="name" required />
+							</label>
+							<label>
+								<span>Email</span>
+								<input type="email" name="email" autocomplete="email" required />
+							</label>
+						</div>
+						<label>
+							<span>Mensaje</span>
+							<textarea name="message" rows="5" required></textarea>
+						</label>
+						<div class="form__actions">
+							<button class="btn btn--primary" type="submit">Enviar</button>
+							<a class="btn btn--ghost" href="mailto:contact@example.com">Email directo</a>
+						</div>
+					</form>
+				</div>
+			</section>
+		</main>
+
+		<!-- Project Modals -->
+		<dialog class="modal" id="modal-1" aria-labelledby="modal-1-title">
+			<article>
+				<header>
+					<h3 id="modal-1-title">Dashboard de Analítica – Detalles</h3>
+					<button class="icon close" data-close>✕</button>
+				</header>
+				<p>
+					Estructura basada en componentes con división por dominios. Se optimizaron renderizados costosos
+					mediante virtualización y se empleó IntersectionObserver para cargas diferidas.
+				</p>
+			</article>
+		</dialog>
+		<dialog class="modal" id="modal-2" aria-labelledby="modal-2-title">
+			<article>
+				<header>
+					<h3 id="modal-2-title">E-commerce Minimal – Detalles</h3>
+					<button class="icon close" data-close>✕</button>
+				</header>
+				<p>
+					Se cuidó el LCP con imágenes adaptativas y precarga selectiva. Se eliminaron bloqueos de render,
+					optimizando fuentes y reduciendo JavaScript innecesario.
+				</p>
+			</article>
+		</dialog>
+		<dialog class="modal" id="modal-3" aria-labelledby="modal-3-title">
+			<article>
+				<header>
+					<h3 id="modal-3-title">Design System – Detalles</h3>
+					<button class="icon close" data-close>✕</button>
+				</header>
+				<p>
+					Tokens tipográficos, de color y espaciado con CSS Custom Properties. Documentación integrada y
+					componentes con estados accesibles por teclado.
+				</p>
+			</article>
+		</dialog>
+
+		<script type="module" src="/src/main.js"></script>
+	</body>
+	</html>
