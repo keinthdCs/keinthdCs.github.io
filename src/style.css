@@ -100,13 +100,16 @@ a { color: inherit; text-decoration: none; }
 /* Footer */
 .site-footer { border-top: 1px solid #151515; padding: 2rem 0; color: var(--muted); }
 
-/* Reveal animations */
+/* Reveal animations (gated by .enhanced so content is visible without JS) */
 @media (prefers-reduced-motion: no-preference) {
-	[data-section] { opacity: .001; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-	[data-section].visible { opacity: 1; transform: translateY(0); }
-	.reveal { opacity: .001; transform: translateY(12px) scale(.98); transition: opacity .5s ease, transform .5s ease; }
-	.reveal.visible { opacity: 1; transform: none; }
+	html.enhanced [data-section] { opacity: .001; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+	html.enhanced [data-section].visible { opacity: 1; transform: translateY(0); }
+	html.enhanced .reveal { opacity: .001; transform: translateY(12px) scale(.98); transition: opacity .5s ease, transform .5s ease; }
+	html.enhanced .reveal.visible { opacity: 1; transform: none; }
 }
+
+/* Project card media */
+.project.card img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; border: 1px solid #1b1b1b; margin-bottom: .75rem; background: #111; }
 
 /* Responsive tweaks */
 @media (max-width: 1000px) {
