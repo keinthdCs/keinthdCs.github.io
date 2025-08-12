@@ -1,5 +1,4 @@
-// Asset imports (Vite will process these)
-import heroUrl from '../eyes.jpg';
+// No asset imports needed for hero; served from public/images.
 
 // Enable progressive enhancement marker so CSS animations only apply when JS is active
 document.documentElement.classList.add('enhanced');
@@ -131,9 +130,7 @@ form?.addEventListener('submit', (e) => {
 	form.reset();
 });
 
-// Set hero image
-const heroImg = document.querySelector('img[data-hero-img]');
-if (heroImg) heroImg.src = heroUrl;
+// Project images are already lazy; hero is eager for better LCP
 
 // Footer year
 const yearEl = document.getElementById('year');

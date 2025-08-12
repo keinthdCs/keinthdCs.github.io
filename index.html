@@ -9,6 +9,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 		<link rel="icon" href="/vite.svg" type="image/svg+xml" />
+		<link rel="preload" as="image" href="/eyes.jpg" imagesizes="(max-width: 600px) 88vw, (max-width: 1000px) 80vw, 520px" />
 		<link rel="stylesheet" href="/src/style.css" />
 			<noscript>
 				<style>
@@ -63,8 +64,17 @@
 							<a href="#contact" class="btn">Contacto</a>
 						</div>
 					</div>
-								<figure class="hero__visual">
-									<img data-hero-img alt="Ilustración abstracta" loading="lazy" />
+																	<figure class="hero__visual">
+																		<img 
+																			src="/eyes.jpg"
+																			alt="Ilustración abstracta"
+																			loading="eager"
+																			fetchpriority="high"
+																			decoding="async"
+																			sizes="(max-width: 600px) 88vw, (max-width: 1000px) 80vw, 520px"
+																			width="1200" height="900"
+																			onerror="this.classList.add('img-error'); this.style.display='none'; this.parentElement.setAttribute('data-fallback','');"
+																		/>
 					</figure>
 				</div>
 			</section>
