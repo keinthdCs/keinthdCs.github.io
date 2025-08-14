@@ -1,13 +1,221 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <meta name="description" content="Portafolio de desarrollador: proyectos, stack, experiencia y contacto. Minimalista, profesional y técnico." />
+    <meta property="og:title" content="Portafolio | Desarrollador" />
+    <meta property="og:description" content="Experiencia interactiva y profesional con foco técnico." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%230A84FF' d='M32 6l10.39 18H53L32 58 11 24h10.61L32 6z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Portafolio | Desarrollador</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#inicio" class="brand" aria-label="Inicio">Dev<span>.</span></a>
+        <nav class="nav" aria-label="principal">
+          <button class="nav__toggle" aria-expanded="false" aria-controls="menu">☰</button>
+          <ul id="menu" class="nav__list">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#tecnologias">Tecnologías</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a class="btn btn--ghost" href="/Curriculum.pdf" download>Descargar CV</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero container reveal" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <h1 id="hero-title">Construyo experiencias web minimalistas y escalables</h1>
+          <p class="lead">Desarrollador de software centrado en rendimiento, accesibilidad y un código limpio. Diseño y desarrollo soluciones end-to-end con foco técnico.</p>
+          <div class="hero__actions">
+            <a href="#proyectos" class="btn">Ver proyectos</a>
+            <a href="/Curriculum.pdf" class="btn btn--ghost">CV</a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop" alt="Escritorio con laptop y código" loading="lazy" />
+        </div>
+      </section>
+
+      <section id="sobre-mi" class="about container reveal" aria-labelledby="about-title">
+        <h2 id="about-title">Sobre mí</h2>
+        <p>
+          Soy un desarrollador orientado a producto con mentalidad de ingeniería. Me gusta tomar problemas complejos y resolverlos con soluciones simples y mantenibles. Trabajo con HTML5, CSS3 (Flexbox/Grid) y JavaScript ES6+, además de entornos modernos y buenas prácticas.
+        </p>
+        <ul class="stats">
+          <li>
+            <span class="stats__num" data-count="5">5+</span>
+            <span class="stats__label">Años construyendo interfaces</span>
+          </li>
+          <li>
+            <span class="stats__num" data-count="20">20+</span>
+            <span class="stats__label">Proyectos completos</span>
+          </li>
+          <li>
+            <span class="stats__num">Frontend · Backend · DevOps</span>
+            <span class="stats__label">Stack principal</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="proyectos" class="projects container" aria-labelledby="projects-title">
+        <div class="section-head reveal">
+          <h2 id="projects-title">Proyectos destacados</h2>
+          <p>Selección con enfoque técnico: tecnologías, desafíos y soluciones.</p>
+        </div>
+
+        <article class="project-card reveal">
+          <div class="project-card__media">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop" alt="Panel administrativo con gráficos" loading="lazy" />
+          </div>
+          <div class="project-card__body">
+            <h3>Dashboard de Analítica en Tiempo Real</h3>
+            <p>SPA con arquitectura modular y visualización de métricas en vivo.</p>
+            <ul class="chips">
+              <li>React</li><li>TypeScript</li><li>Vite</li><li>WebSockets</li><li>D3.js</li>
+            </ul>
+            <div class="project-card__details">
+              <div>
+                <h4>Desafío</h4>
+                <p>Renderizar miles de puntos y streams sin bloquear la UI ni perder precisión temporal.</p>
+              </div>
+              <div>
+                <h4>Solución</h4>
+                <p>Virtualización de listas, memoización con hooks, workers para parsing y escalado con websockets resilientes.</p>
+              </div>
+            </div>
+            <div class="project-card__links">
+              <a href="#" class="link">Demo</a>
+              <a href="#" class="link">Código</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card__media">
+            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop" alt="Servicios y microservicios en nube" loading="lazy" />
+          </div>
+          <div class="project-card__body">
+            <h3>Plataforma de Microservicios</h3>
+            <p>API gateway + servicios independientes para escalar features rápidamente.</p>
+            <ul class="chips">
+              <li>Node.js</li><li>Express</li><li>Docker</li><li>PostgreSQL</li><li>Redis</li>
+            </ul>
+            <div class="project-card__details">
+              <div>
+                <h4>Desafío</h4>
+                <p>Desacoplar dominios y manejar consistencia eventual con alta disponibilidad.</p>
+              </div>
+              <div>
+                <h4>Solución</h4>
+                <p>Event-driven con colas, circuit breakers, retry/backoff y tracing distribuido.</p>
+              </div>
+            </div>
+            <div class="project-card__links">
+              <a href="#" class="link">Docs</a>
+              <a href="#" class="link">Código</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card__media">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop" alt="Sitio web performance" loading="lazy" />
+          </div>
+          <div class="project-card__body">
+            <h3>Web de Alto Rendimiento</h3>
+            <p>Landing minimalista con 100/100 en Lighthouse y acceso AA.</p>
+            <ul class="chips">
+              <li>HTML5</li><li>CSS Grid</li><li>ES6+</li><li>ARIA</li><li>CI/CD</li>
+            </ul>
+            <div class="project-card__details">
+              <div>
+                <h4>Desafío</h4>
+                <p>Tiempos de carga < 1s en móvil y cumplimiento WCAG sin sacrificar diseño.</p>
+              </div>
+              <div>
+                <h4>Solución</h4>
+                <p>Critical CSS, lazy-loading, prefetch inteligente y pruebas automáticas de accesibilidad.</p>
+              </div>
+            </div>
+            <div class="project-card__links">
+              <a href="#" class="link">Demo</a>
+              <a href="#" class="link">Artículo</a>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <section id="tecnologias" class="tech container reveal" aria-labelledby="tech-title">
+        <h2 id="tech-title">Tecnologías</h2>
+        <p>Stack con el que me siento más productivo y seguro.</p>
+        <ul class="tech-grid">
+          <li>HTML5</li><li>CSS3</li><li>JavaScript (ES2023)</li><li>TypeScript</li>
+          <li>React</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li>
+          <li>Docker</li><li>GitHub Actions</li><li>Vite</li><li>Vitest</li>
+        </ul>
+      </section>
+
+      <section id="experiencia" class="experience container reveal" aria-labelledby="exp-title">
+        <h2 id="exp-title">Experiencia</h2>
+        <div class="timeline">
+          <article class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <h3>Desarrollador Full‑Stack · Compañía A</h3>
+              <span class="timeline__meta">2023 — 2025</span>
+              <p>Diseño de APIs REST, componentes reutilizables y despliegues automatizados.</p>
+            </div>
+          </article>
+          <article class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <h3>Frontend Engineer · Compañía B</h3>
+              <span class="timeline__meta">2021 — 2023</span>
+              <p>Optimización de rendimiento, auditorías de accesibilidad y diseño de sistemas UI.</p>
+            </div>
+          </article>
+          <article class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <h3>Junior Developer · Compañía C</h3>
+              <span class="timeline__meta">2019 — 2021</span>
+              <p>Mantenimiento de código, integración continua y pruebas unitarias.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacto" class="contact container reveal" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contacto</h2>
+        <p>¿Tienes una idea o proyecto? Hablemos.</p>
+        <div class="contact__actions">
+          <a class="btn" href="mailto:contacto@tu-dominio.dev?subject=Contacto%20desde%20portafolio">Escríbeme</a>
+          <button class="btn btn--ghost" id="copy-email" data-email="contacto@tu-dominio.dev">Copiar email</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container" role="contentinfo">
+      <p>© <span id="year"></span> Portafolio · Hecho con HTML5, CSS3 y ES6+</p>
+    </footer>
+
+    <script defer src="/script.js"></script>
   </body>
 </html>
